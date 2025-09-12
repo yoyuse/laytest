@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="280" width="800" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<rect height="280" rx="5" ry="5" style="fill: #eeeeee" width="800" x="0" y="0" />
+	<g style="font-family: system-ui; font-size: 12px" transform="translate(10, 10)">
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="0.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="6.5" y="3.5" />
+		<text x="8.5" y="26.5">Esc</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="52.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="58.5" y="3.5" />
+		<text x="60.5" y="17.5">!</text>
+		<text x="60.5" y="35.5">1</text>
+		<text x="78.5" y="35.5">ぬ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="104.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="110.5" y="3.5" />
+		<text x="112.5" y="17.5">@</text>
+		<text x="112.5" y="35.5">2</text>
+		<text x="130.5" y="35.5">ふ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="156.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="162.5" y="3.5" />
+		<text x="164.5" y="17.5">#</text>
+		<text x="164.5" y="35.5">3</text>
+		<text x="182.5" y="17.5">ぁ</text>
+		<text x="182.5" y="35.5">あ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="208.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="214.5" y="3.5" />
+		<text x="216.5" y="17.5">$</text>
+		<text x="216.5" y="35.5">4</text>
+		<text x="234.5" y="17.5">ぅ</text>
+		<text x="234.5" y="35.5">う</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="260.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="266.5" y="3.5" />
+		<text x="268.5" y="17.5">%</text>
+		<text x="268.5" y="35.5">5</text>
+		<text x="286.5" y="17.5">ぇ</text>
+		<text x="286.5" y="35.5">え</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="312.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="318.5" y="3.5" />
+		<text x="320.5" y="17.5">^</text>
+		<text x="320.5" y="35.5">6</text>
+		<text x="338.5" y="17.5">ぉ</text>
+		<text x="338.5" y="35.5">お</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="364.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="370.5" y="3.5" />
+		<text x="372.5" y="17.5">&amp;</text>
+		<text x="372.5" y="35.5">7</text>
+		<text x="390.5" y="17.5">ゃ</text>
+		<text x="390.5" y="35.5">や</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="416.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="422.5" y="3.5" />
+		<text x="424.5" y="17.5">*</text>
+		<text x="424.5" y="35.5">8</text>
+		<text x="442.5" y="17.5">ゅ</text>
+		<text x="442.5" y="35.5">ゆ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="468.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="474.5" y="3.5" />
+		<text x="476.5" y="17.5">(</text>
+		<text x="476.5" y="35.5">9</text>
+		<text x="494.5" y="17.5">ょ</text>
+		<text x="494.5" y="35.5">よ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="520.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="526.5" y="3.5" />
+		<text x="528.5" y="17.5">)</text>
+		<text x="528.5" y="35.5">0</text>
+		<text x="546.5" y="17.5">を</text>
+		<text x="546.5" y="35.5">わ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="572.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="578.5" y="3.5" />
+		<text x="580.5" y="17.5">_</text>
+		<text x="580.5" y="35.5">-</text>
+		<text x="598.5" y="17.5">ー</text>
+		<text x="598.5" y="35.5">ほ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="624.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="630.5" y="3.5" />
+		<text x="632.5" y="17.5">+</text>
+		<text x="632.5" y="35.5">=</text>
+		<text x="650.5" y="35.5">へ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="676.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="682.5" y="3.5" />
+		<text x="684.5" y="17.5">|</text>
+		<text x="684.5" y="35.5">\</text>
+		<text x="702.5" y="35.5">む</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="728.5" y="0.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="734.5" y="3.5" />
+		<text x="736.5" y="17.5">~</text>
+		<text x="736.5" y="35.5">`</text>
+		<text x="754.5" y="35.5">ろ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="77" x="0.5" y="52.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="65" x="6.5" y="55.5" />
+		<text x="8.5" y="78.5">Tab</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="78.5" y="52.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="84.5" y="55.5" />
+		<text x="86.5" y="69.5">Q</text>
+		<text x="104.5" y="87.5">た</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="130.5" y="52.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="136.5" y="55.5" />
+		<text x="138.5" y="69.5">W</text>
+		<text x="156.5" y="87.5">て</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="182.5" y="52.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="188.5" y="55.5" />
+		<text x="190.5" y="69.5">E</text>
+		<text x="208.5" y="69.5">ぃ</text>
+		<text x="208.5" y="87.5">い</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="234.5" y="52.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="240.5" y="55.5" />
+		<text x="242.5" y="69.5">R</text>
+		<text x="260.5" y="87.5">す</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="286.5" y="52.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="292.5" y="55.5" />
+		<text x="294.5" y="69.5">T</text>
+		<text x="312.5" y="87.5">か</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="338.5" y="52.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="344.5" y="55.5" />
+		<text x="346.5" y="69.5">Y</text>
+		<text x="364.5" y="87.5">ん</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="390.5" y="52.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="396.5" y="55.5" />
+		<text x="398.5" y="69.5">U</text>
+		<text x="416.5" y="87.5">な</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="442.5" y="52.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="448.5" y="55.5" />
+		<text x="450.5" y="69.5">I</text>
+		<text x="468.5" y="87.5">に</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="494.5" y="52.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="500.5" y="55.5" />
+		<text x="502.5" y="69.5">O</text>
+		<text x="520.5" y="87.5">ら</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="546.5" y="52.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="552.5" y="55.5" />
+		<text x="554.5" y="69.5">P</text>
+		<text x="572.5" y="87.5">せ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="598.5" y="52.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="604.5" y="55.5" />
+		<text x="606.5" y="69.5">{</text>
+		<text x="606.5" y="87.5">[</text>
+		<text x="624.5" y="69.5">「</text>
+		<text x="624.5" y="87.5">゛</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="650.5" y="52.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="656.5" y="55.5" />
+		<text x="658.5" y="69.5">}</text>
+		<text x="658.5" y="87.5">]</text>
+		<text x="676.5" y="69.5">」</text>
+		<text x="676.5" y="87.5">゜</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="77" x="702.5" y="52.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="65" x="708.5" y="55.5" />
+		<text x="710.5" y="78.5">Delete</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="90" x="0.5" y="104.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="78" x="6.5" y="107.5" />
+		<text x="8.5" y="130.5">Control</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="91.5" y="104.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="97.5" y="107.5" />
+		<text x="99.5" y="121.5">A</text>
+		<text x="117.5" y="139.5">ち</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="143.5" y="104.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="149.5" y="107.5" />
+		<text x="151.5" y="121.5">S</text>
+		<text x="169.5" y="139.5">と</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="195.5" y="104.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="201.5" y="107.5" />
+		<text x="203.5" y="121.5">D</text>
+		<text x="221.5" y="139.5">し</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="247.5" y="104.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="253.5" y="107.5" />
+		<text x="255.5" y="121.5">F</text>
+		<text x="273.5" y="139.5">は</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="299.5" y="104.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="305.5" y="107.5" />
+		<text x="307.5" y="121.5">G</text>
+		<text x="325.5" y="139.5">き</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="351.5" y="104.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="357.5" y="107.5" />
+		<text x="359.5" y="121.5">H</text>
+		<text x="377.5" y="139.5">く</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="403.5" y="104.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="409.5" y="107.5" />
+		<text x="411.5" y="121.5">J</text>
+		<text x="429.5" y="139.5">ま</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="455.5" y="104.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="461.5" y="107.5" />
+		<text x="463.5" y="121.5">K</text>
+		<text x="481.5" y="139.5">の</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="507.5" y="104.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="513.5" y="107.5" />
+		<text x="515.5" y="121.5">L</text>
+		<text x="533.5" y="139.5">り</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="559.5" y="104.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="565.5" y="107.5" />
+		<text x="567.5" y="121.5">:</text>
+		<text x="567.5" y="139.5">;</text>
+		<text x="585.5" y="139.5">れ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="611.5" y="104.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="617.5" y="107.5" />
+		<text x="619.5" y="121.5">&quot;</text>
+		<text x="619.5" y="139.5">&apos;</text>
+		<text x="637.5" y="139.5">け</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="116" x="663.5" y="104.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="104" x="669.5" y="107.5" />
+		<text x="671.5" y="130.5">Return</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="116" x="0.5" y="156.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="104" x="6.5" y="159.5" />
+		<text x="8.5" y="182.5">Shift</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="117.5" y="156.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="123.5" y="159.5" />
+		<text x="125.5" y="173.5">Z</text>
+		<text x="143.5" y="173.5">っ</text>
+		<text x="143.5" y="191.5">つ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="169.5" y="156.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="175.5" y="159.5" />
+		<text x="177.5" y="173.5">X</text>
+		<text x="195.5" y="191.5">さ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="221.5" y="156.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="227.5" y="159.5" />
+		<text x="229.5" y="173.5">C</text>
+		<text x="247.5" y="191.5">そ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="273.5" y="156.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="279.5" y="159.5" />
+		<text x="281.5" y="173.5">V</text>
+		<text x="299.5" y="191.5">ひ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="325.5" y="156.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="331.5" y="159.5" />
+		<text x="333.5" y="173.5">B</text>
+		<text x="351.5" y="191.5">こ</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="377.5" y="156.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="383.5" y="159.5" />
+		<text x="385.5" y="173.5">N</text>
+		<text x="403.5" y="191.5">み</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="429.5" y="156.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="435.5" y="159.5" />
+		<text x="437.5" y="173.5">M</text>
+		<text x="455.5" y="191.5">も</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="481.5" y="156.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="487.5" y="159.5" />
+		<text x="489.5" y="173.5">&lt;</text>
+		<text x="489.5" y="191.5">,</text>
+		<text x="507.5" y="173.5">、</text>
+		<text x="507.5" y="191.5">ね</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="533.5" y="156.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="539.5" y="159.5" />
+		<text x="541.5" y="173.5">&gt;</text>
+		<text x="541.5" y="191.5">.</text>
+		<text x="559.5" y="173.5">。</text>
+		<text x="559.5" y="191.5">る</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="585.5" y="156.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="591.5" y="159.5" />
+		<text x="593.5" y="173.5">?</text>
+		<text x="593.5" y="191.5">/</text>
+		<text x="611.5" y="173.5">・</text>
+		<text x="611.5" y="191.5">め</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="90" x="637.5" y="156.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="78" x="643.5" y="159.5" />
+		<text x="645.5" y="182.5">Shift</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="728.5" y="156.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="734.5" y="159.5" />
+		<text x="736.5" y="182.5">Fn</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="78.5" y="208.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="84.5" y="211.5" />
+		<text x="86.5" y="234.5">Alt</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="77" x="130.5" y="208.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="65" x="136.5" y="211.5" />
+		<text x="138.5" y="234.5">◇</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="311" x="208.5" y="208.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="299" x="214.5" y="211.5" />
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="77" x="520.5" y="208.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="65" x="526.5" y="211.5" />
+		<text x="528.5" y="234.5">◇</text>
+		<rect height="51" rx="5" ry="5" style="fill: #cccccc; stroke: #000000; stroke-width: 1" width="51" x="598.5" y="208.5" />
+		<rect height="40" rx="3" ry="3" style="fill: #fcfcfc" width="39" x="604.5" y="211.5" />
+		<text x="606.5" y="234.5">Alt</text>
+	</g>
+	<!--
+	Generated using the Perl SVG Module V2.84
+	by Ronan Oger
+	Info: http://www.roitsystems.com/
+	-->
+</svg>

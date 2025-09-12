@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>laytest</title>
+
+    <style>
+     body { font-size: 0.8rem; }
+     h1 {
+       border-bottom: 2px solid #424242;
+       font-family: "Meiryo", "Optima", sans-serif;
+       font-size: 2.0rem;
+     }
+     /*  */
+     table {
+       border-collapse: collapse;
+       margin: 0 5px 0;
+     }
+     caption {
+       caption-side: top;
+       padding: 10px 0 10px;
+       text-align: left;
+     }
+     caption span:first-child { font-weight: bold; }
+     table {
+       border: solid #424242;
+       border-width: 2px 0 1px;
+     }
+     thead { border-bottom: 1px solid #757575; }
+     th, td { padding: 8px 10px; }
+     td { text-align: right; }
+     td:first-child { text-align: left; }
+     tr:nth-of-type(even) { background-color: #F5F5F5; }
+     /* tr:nth-of-type(2n+3) { background-color: #F5F5F5; } */
+     tr[data-codec-id]:hover { background-color: #BBDEFB; }
+     /* tr[data-codec-id]:hover td:first-child {
+        text-decoration: #1E88E5 underline;
+        } */
+     tr[data-codec-check="NG"] td:nth-child(n+2):nth-child(-n+6) {
+       text-decoration: double #EF5350 line-through;
+     }
+     /*  */
+     #divform, #divtabledesc {
+       display: inline-block;
+       line-height: 1.2rem;
+       vertical-align: top;
+     }
+     label {
+       display: inline-block;
+       font-weight: bold;
+       padding: 10px 0 10px;
+     }
+     textarea {
+       box-sizing: border-box;
+       display: inline-block;
+       font-family: monospace;
+       font-size: 14px;
+       width: 100%;
+       word-break: break-all;
+     }
+     .right { text-align: right; }
+     /*  */
+     #divdesc { padding: 5px; }
+     #divdesc h2 {
+       font-size: 1.0rem;
+       margin: 0;
+     }
+     #divdesc p { margin: 0.5rem 0; }
+     #divdesc ul {
+       margin: 0;
+       padding: 0 0 0 1.0rem;
+     }
+     a:link, a:visited { color: #1E88E5; }
+    </style>
+
+    <script src="codec.js"></script>
+    <!--  -->
+    <script src="codec/jisx4063.js"></script>
+    <!-- <script src="codec/roman.js"></script> -->
+    <script src="codec/uskana.js"></script>
+    <!-- <script src="codec/jacql.js"></script> -->
+    <script src="codec/azik.js"></script>
+    <script src="codec/ushana.js"></script>
+    <script src="codec/ustsuki.js"></script>
+    <!-- <script src="codec/rgts-8.js"></script> -->
+    <script src="codec/rgts.js"></script>
+    <!--  -->
+    <script src="desc.js"></script>
+    <!--  -->
+    <script src="desc/jisx4063.js"></script>
+    <script src="desc/uskana.js"></script>
+    <script src="desc/azik.js"></script>
+    <script src="desc/ushana.js"></script>
+    <script src="desc/ustsuki.js"></script>
+    <!-- <script src="desc/rgts-8.js"></script> -->
+    <script src="desc/rgts.js"></script>
+    <!---  -->
+    <script src="text.js"></script>
+    <!---  -->
+    <script src="text/kenpou.js"></script>
+    <script src="text/mekuraniji.js"></script>
+    <script src="text/nfg-giovanni.js"></script>
+    <!-- <script src="text/nfg-zanelli.js"></script> -->
+    <!-- <script src="text/nfg-kikyou.js"></script> -->
+    <!--  -->
+    <script src="laytest.js"></script>
+
+  </head>
+  <body>
+    <h1>laytest</h1>
+
+    <div id="divform">
+      <label id="labelsrc" for="textsrc">評価テキスト</label>
+      <select id="selecttext" name="selecttext"></select>
+      <span id="spancounter"></span>
+      <br>
+      <textarea id="textsrc" cols="42" name="textsrc" placeholder="テキストを入力します。使用できる文字は、ひらがな([ぁ-んヴ])、長音(ー)、句読点(、。)、かぎ括弧(「」)、中黒(・)、全角空白、です。" rows="12"></textarea>
+      <br>
+      <div class="right">
+        <input id="buttonclear" name="buttonclear" type="button" value="消去">
+        <input id="buttontest" name="buttontest" type="button" value="評価する">
+      </div>
+      <div id="divenc">
+        <label for="textenc">打鍵列</label>
+        <span id="spanenc"></span>
+        <br>
+        <textarea id="textenc" autocorrect="off" cols="42" name="textenc" readonly rows="10" spellcheck="false"></textarea>
+      </div>
+    </div>
+
+    <div id="divtabledesc">
+      <div id="divtable"></div>
+      <div id="divdesc"></div>
+    </div>
+
+    <div id="divfig">
+      <img id="imgfig" alt="QWERTY" title="QWERTY" src="desc/kb-hhkb.svg">
+    </div>
+  </body>
+</html>
