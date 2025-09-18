@@ -7,6 +7,11 @@
 
     <style>
      body { font-size: 0.8rem; }
+     #divcontainer {
+       margin-left: auto;
+       margin-right: auto;
+       max-width: 800px;
+     }
      h1 {
        border-bottom: 2px solid #424242;
        font-family: "Meiryo", "Optima", sans-serif;
@@ -74,8 +79,10 @@
      a:link, a:visited { color: #1E88E5; }
     </style>
 
-    <script src="codec.js"></script>
     <!--  -->
+    <script src="utils.js"></script>
+    <!--  -->
+    <script src="codec.js"></script>
     <script src="codec/jisx4063.js"></script>
     <!-- <script src="codec/roman.js"></script> -->
     <script src="codec/uskana.js"></script>
@@ -87,7 +94,6 @@
     <script src="codec/rgts.js"></script>
     <!--  -->
     <script src="desc.js"></script>
-    <!--  -->
     <script src="desc/jisx4063.js"></script>
     <script src="desc/uskana.js"></script>
     <script src="desc/azik.js"></script>
@@ -97,7 +103,6 @@
     <script src="desc/rgts.js"></script>
     <!---  -->
     <script src="text.js"></script>
-    <!---  -->
     <script src="text/kenpou.js"></script>
     <script src="text/mekuraniji.js"></script>
     <script src="text/nfg-giovanni.js"></script>
@@ -108,34 +113,36 @@
 
   </head>
   <body>
-    <h1>laytest</h1>
+    <div id="divcontainer">
+      <h1>laytest</h1>
 
-    <div id="divform">
-      <label id="labelsrc" for="textsrc">評価テキスト</label>
-      <select id="selecttext" name="selecttext"></select>
-      <span id="spancounter"></span>
-      <br>
-      <textarea id="textsrc" cols="42" name="textsrc" placeholder="テキストを入力します。使用できる文字は、ひらがな([ぁ-んヴ])、長音(ー)、句読点(、。)、かぎ括弧(「」)、中黒(・)、全角空白、です。" rows="12"></textarea>
-      <br>
-      <div class="right">
-        <input id="buttonclear" name="buttonclear" type="button" value="消去">
-        <input id="buttontest" name="buttontest" type="button" value="評価する">
-      </div>
-      <div id="divenc">
-        <label for="textenc">打鍵列</label>
-        <span id="spanenc"></span>
+      <div id="divform">
+        <label id="labelsrc" for="textsrc">評価テキスト</label>
+        <select id="selecttext" name="selecttext"></select>
+        <span id="spancounter"></span>
         <br>
-        <textarea id="textenc" autocorrect="off" cols="42" name="textenc" readonly rows="10" spellcheck="false"></textarea>
+        <textarea id="textsrc" cols="42" name="textsrc" placeholder="テキストを入力します。使用できる文字は、ひらがな([ぁ-んヴ])、長音(ー)、句読点(、。)、かぎ括弧(「」)、中黒(・)、全角空白、です。" rows="12"></textarea>
+        <br>
+        <div class="right">
+          <input id="buttonclear" name="buttonclear" type="button" value="消去">
+          <input id="buttontest" name="buttontest" type="button" value="評価する">
+        </div>
+        <div id="divenc">
+          <label for="textenc">打鍵列</label>
+          <span id="spanenc"></span>
+          <br>
+          <textarea id="textenc" autocorrect="off" cols="42" name="textenc" readonly rows="10" spellcheck="false"></textarea>
+        </div>
       </div>
-    </div>
 
-    <div id="divtabledesc">
-      <div id="divtable"></div>
-      <div id="divdesc"></div>
-    </div>
+      <div id="divtabledesc">
+        <div id="divtable"></div>
+        <div id="divdesc"></div>
+      </div>
 
-    <div id="divfig">
-      <img id="imgfig" alt="QWERTY" title="QWERTY" src="desc/kb-hhkb.svg">
+      <div id="divfig">
+        <img id="imgfig" alt="QWERTY" title="QWERTY" src="desc/kb-hhkb.svg">
+      </div>
     </div>
   </body>
 </html>

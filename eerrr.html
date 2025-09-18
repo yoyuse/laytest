@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>eerrr</title>
+
+    <style>
+     body { font-size: 0.8rem; }
+     #divcontainer {
+       margin-left: auto;
+       margin-right: auto;
+       max-width: 800px;
+     }
+     /*  */
+     header {
+       border-bottom: 2px solid #424242;
+       margin: 1.33rem 0;
+     }
+     h1 {
+       /* border-bottom: 2px solid #424242; */
+       display: inline-block;
+       font-family: "Meiryo", "Optima", sans-serif;
+       font-size: 2.0rem;
+       margin: 0 16px;
+     }
+     nav {
+       display: inline-block;
+     }
+     .icon {
+       box-sizing: border-box;
+       display: inline-block;
+       height: 10px;
+       width: 10px;
+     }
+     .icon-back {
+       border: 2px solid #9E9E9E;
+       border-bottom: transparent;
+       border-right: transparent;
+       transform: translate(2px, -2px) rotate(-45deg);
+     }
+     .icon-forward {
+       border: 2px solid #9E9E9E;
+       border-bottom: transparent;
+       border-left: transparent;
+       transform: translate(-2px, -2px) rotate(45deg);
+     }
+     /*  */
+     select {
+       margin: 4px 0;
+       max-width: 14.0rem;
+       text-overflow: ellipsis;
+     }
+     .stdio {
+       border: 1px solid #757575;
+       border-radius: 2px;
+       box-sizing: border-box;
+       display: inline-block;
+       font-family: monospace;
+       font-size: 14px;
+       line-height: 120%;
+       margin: 4px 0;
+       padding: 4px 2px;
+       white-space: pre;
+       width: 100%;
+       /* word-break: break-all; */
+     }
+     /*  */
+     span.help {
+       padding: 0 4px;
+     }
+     span.ch {
+       font-family: monospace;
+       font-size: 13px;
+       position: relative;
+       bottom: 0.4em;
+     }
+     span.stroke {
+       font-family: monospace;
+       font-size: 16px;
+       padding: 0 2px;
+     }
+     span.usr { color: #26A69A; }
+     span.err { color: #EF5350; }
+     .message {
+       border-left: 4px solid #9E9E9E;
+       color: #9E9E9E;
+       margin-left: 2px;
+       padding-left: 8px;
+     }
+     a:link, a:visited { color: #1E88E5; }
+    </style>
+
+    <!--  -->
+    <script src="lcs.js"></script>
+    <script src="cookie.js"></script>
+    <script src="utils.js"></script>
+    <!--  -->
+    <script src="codec.js"></script>
+    <!-- <script src="codec/jisx4063.js"></script> -->
+    <!-- <script src="codec/roman.js"></script> -->
+    <script src="codec/uskana.js"></script>
+    <!-- <script src="codec/jacql.js"></script> -->
+    <!-- <script src="codec/azik.js"></script> -->
+    <!-- <script src="codec/ushana.js"></script> -->
+    <!-- <script src="codec/ustsuki.js"></script> -->
+    <!-- <script src="codec/rgts-8.js"></script> -->
+    <script src="codec/rgts.js"></script>
+    <!--  -->
+    <script src="book.js"></script>
+    <script src="book/eellltxt-kana.js"></script>
+    <!--  -->
+    <script src="eerrr.js"></script>
+
+  </head>
+  <body>
+    <div id="divcontainer">
+      <header>
+        <nav>
+          <div class="icon icon-back" onclick="history.back();"></div>
+        </nav>
+        <h1>eerrr</h1>
+        <nav>
+          <div class="icon icon-forward" onclick="history.forward();"></div>
+        </nav>
+      </header>
+
+      <label for="selectcodec">入力方式</label>
+      <select id="selectcodec" name="selectcodec"></select>
+      <br>
+      <label for="selectbook">テキスト</label>
+      <select id="selectbook" name="selectbook"></select>
+      <br>
+      <label for="selectlesson">レッスン</label>
+      <select id="selectlesson" name="selectlesson"></select>
+      <br>
+      <div id="divout" class="stdio">&nbsp;</div>
+      <br>
+      <input name="textin" type="text" value="" id="textin" class="stdio" lang="en" spellcheck="false" autocomplete="off" placeholder="input here">
+      <br>
+      <div id="divhelp" class="stdio">&nbsp;</div>
+    </div>
+  </body>
+</html>

@@ -55,6 +55,41 @@ function Codec(id, title, rules) {
         map((ascii) => RegExp.escape(ascii)).join("|");
     this.pattern = new RegExp('(.*?)(' + pattern + ')(.*)', 's');
     //
+    this.rules2 = new Array();
+    for (const rule of this.rules) {
+        /*
+        // XXX: これでは RGTs で のア とかに対応できない
+        const rule2 = rule.map(s => s.katakana());
+        this.rules2.push(rule, rule2);
+        */
+        // XXX: RGTs 用
+        const ascii = rule[0];
+        const hiragana = rule[1];
+        const katakana = hiragana.katakana();
+        let cond = rule[2];
+        if (cond === undefined) {
+            this.rules2.push([ascii, hiragana]);
+            this.rules2.push([ascii, katakana]);
+        } else {
+            let m;
+            if ((m = cond.match(/^\(\?\!(.+)\)$/)) !== null) {
+                cond = "(?!" + m[1].split("|").map(s => {
+                    let mo;
+                    if ((mo = s.match(/^\[(.+)\]$/)) !== null) {
+                        return "[" + mo[1] + mo[1].katakana() + "]";
+                    } else {
+                        return s + "|" + s.katakana();
+                    }
+                }).join("|") + ")";
+            }
+            this.rules2.push([ascii, hiragana, cond]);
+            this.rules2.push([ascii, katakana, cond]);
+        }
+    }
+    //
+    this.pattern2 = this.rules2.map(r => [r[0], new RegExp("^(" + RegExp.escape(r[1]) + (r[2] ?? "") + ")(.*)")]);
+    this.pattern2.push([null, /^(.)(.*)/]); // sentinel
+    //
     return this;
 }
 
@@ -81,6 +116,23 @@ Codec.prototype.encode = function(str) {
     str = this.encodesub(this.encodesub(str));
     // return str;
     return str.replace(/　/g, ' '); // XXX
+}
+
+Codec.prototype.encode2sub = function(str) {
+    let s = str;
+    let ret = new Array();
+    // XXX: ローマ字で連続する っ をうまく処理できないと思う
+    while (s) {
+        for (pat of this.pattern2) {
+            let m;
+            if ((m = s.match(pat[1])) !== null) {
+                ret.push([m[1], pat[0] ?? m[1].hankaku()]);
+                s = m[2];
+                break;
+            }
+        }
+    }
+    return ret;
 }
 
 Codec.prototype.decode = function(str) {
