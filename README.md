@@ -1,3 +1,3 @@
 # laytest
 
-[laytest](https://yoyuse.github.io/laytest/) のリポジトリです
+[less is better](https://yoyuse.github.io/laytest/) のリポジトリです

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>less is better</title>
+
+    <style>
+     /* body { font-size: 0.8rem; } */
+     #divcontainer {
+       margin-left: auto;
+       margin-right: auto;
+       max-width: 800px;
+     }
+     /*  */
+     header {
+       border-bottom: 2px solid #424242;
+       margin: 1.33rem 0;
+     }
+     h1 {
+       /* border-bottom: 2px solid #424242; */
+       display: inline-block;
+       font-family: "Meiryo", "Optima", sans-serif;
+       font-size: 2.0rem;
+       margin: 0 16px;
+     }
+     nav {
+       display: inline-block;
+     }
+     .icon {
+       box-sizing: border-box;
+       display: inline-block;
+       height: 10px;
+       width: 10px;
+     }
+     .icon-back {
+       border: 2px solid #9E9E9E;
+       border-bottom: transparent;
+       border-right: transparent;
+       transform: translate(2px, -2px) rotate(-45deg);
+     }
+     .icon-forward {
+       border: 2px solid #9E9E9E;
+       border-bottom: transparent;
+       border-left: transparent;
+       transform: translate(-2px, -2px) rotate(45deg);
+     }
+     /*  */
+     dt, .dt { font-weight: bold; }
+     ul.dl { padding-left: 0; }
+     ul.dl li { list-style-type: none; }
+     ul.dl li span.dt {
+       display: inline-block;
+       margin-right: 0.5rem;
+       text-align: right;
+       width: 4.0rem;
+     }
+     /*  */
+     a:link, a:visited { color: #1E88E5; }
+    </style>
+  </head>
+
+  <body>
+    <div id="divcontainer">
+      <header>
+        <nav>
+          <div class="icon icon-back" onclick="history.back();"></div>
+        </nav>
+        <h1>less is better</h1>
+        <nav>
+          <div class="icon icon-forward" onclick="history.forward();"></div>
+        </nav>
+      </header>
+
+      <ul class="dl">
+        <li>
+          <span class="dt"><a href="laytest.html">laytest</a></span>
+          <span class="dd">かな入力効率の比較</span>
+        </li>
+        <li>
+          <span class="dt"><a href="eerrr.html">eerrr</a></span>
+          <span class="dd">EELLL 風の練習プログラム</span>
+        </li>
+      </ul>
+  </body>
+</html>
