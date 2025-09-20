@@ -138,8 +138,8 @@ function do_result(res) {
             return s;
         });
         const message = document.createElement("span");
-        // message.classList.add("message");
-        message.textContent = "Typo ";
+        // message.textContent = "Typo ";
+        message.textContent = "まちがえた文字 ";
         for (let s of serr) { message.appendChild(s); }
         pute(message, ["message"]);
     }
@@ -254,7 +254,10 @@ window.addEventListener("load", (event) => {
         putm();
         putm(`${ls.name}. ${ls.text[0]}`);
         putm();
-        putm("Hit Return to start lesson");
+        // putm("Hit Return to start lesson");
+        putm("Return キーで開始");
+        //
+        textin.focus();
     });
     //
     for (let cd of codec) {
@@ -324,13 +327,14 @@ window.addEventListener("load", (event) => {
                         return s;
                     });
                     const message = document.createElement("span");
-                    // message.classList.add("message");
-                    message.textContent = "Lesson typo ";
+                    // message.textContent = "Lesson typo ";
+                    message.textContent = "この課でまちがえた文字 ";
                     for (let s of serr) { message.appendChild(s); }
                     pute(message, ["message"]);
                 }
                 //
-                putm("Next/Again/Previous/Quit");
+                // putm("Next/Again/Previous/Quit");
+                putm("続けますか? - 次へ(N)/もう一度(A)/前へ(P)/終了(Q)");
                 isprompt = true;
             }
             //
@@ -341,18 +345,20 @@ window.addEventListener("load", (event) => {
                 current_text = null;
             }
         } else if (isprompt && current_text_index === null) {
-            if (event.key === "n" || event.key === " ") {
+            const key = event.key.toLowerCase();
+            if (key === "n" || key === " ") {
                 current_lesson_index = (current_lesson_index + 1) % current_book.lesson.length;
                 isprompt = false;
-            } else if (event.key === "p") {
+            } else if (key === "p") {
                 current_lesson_index = (current_lesson_index + current_book.lesson.length - 1) % current_book.lesson.length;
                 isprompt = false;
-            } else if (event.key === "a") {
+            } else if (key === "a") {
                 // NOP
                 isprompt = false;
-            } else if (event.key === "q") {
+            } else if (key === "q") {
                 // isprompt = false;
-                putm("Bye");
+                // putm("Bye");
+                putm("おつかれさまでした");
                 textin.blur();
                 //
                 lesson_typo.length = 0;
@@ -364,6 +370,5 @@ window.addEventListener("load", (event) => {
             }
         }
     });
-    //
-    textin.focus();
+    // textin.focus();
 });

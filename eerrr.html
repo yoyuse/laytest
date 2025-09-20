@@ -66,6 +66,11 @@
        width: 100%;
        /* word-break: break-all; */
      }
+     #textin {
+       caret-color: FieldText;
+       color: Field;
+     }
+     #textin::placeholder { color: #757575; }
      /*  */
      span.help {
        padding: 0 4px;
@@ -137,7 +142,7 @@
       <br>
       <div id="divout" class="stdio">&nbsp;</div>
       <br>
-      <input name="textin" type="text" value="" id="textin" class="stdio" lang="en" spellcheck="false" autocomplete="off" placeholder="input here">
+      <input name="textin" type="text" value="" id="textin" class="stdio" lang="en" spellcheck="false" autocomplete="off" placeholder="ここに入力">
       <br>
       <div id="divhelp" class="stdio">&nbsp;</div>
     </div>
