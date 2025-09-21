@@ -389,17 +389,20 @@ window.addEventListener("load", (event) => {
                 current_text = null;
             }
         } else if (isprompt && current_text_index === null) {
-            const key = event.key.toLowerCase();
-            if (key === "n" || key === " ") {
+            switch (event.key.toLowerCase()) {
+            case "n":
+            case " ":
                 current_lesson_index = (current_lesson_index + 1) % current_book.lesson.length;
                 isprompt = false;
-            } else if (key === "p") {
+                break;
+            case "p":
                 current_lesson_index = (current_lesson_index + current_book.lesson.length - 1) % current_book.lesson.length;
                 isprompt = false;
-            } else if (key === "a") {
-                // NOP
+                break;
+            case "a":
                 isprompt = false;
-            } else if (key === "q") {
+                break;
+            case "q":
                 // isprompt = false;
                 //
                 puts();
@@ -423,6 +426,10 @@ window.addEventListener("load", (event) => {
                 //
                 // lesson_typo.length = 0;
                 do_reset();
+                show_help();    // XXX: clear help
+                break;
+            default:
+                break;
             }
             textin.value = "";
             if (!isprompt) {
