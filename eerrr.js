@@ -15,6 +15,20 @@ let isprompt = false;
 
 const lesson_typo = new Array();
 
+let time = null;
+let stall = null;
+let stcor = null;
+let sterr = null;
+let stquest = null;
+let lstime = null;
+let lstimebeg = null;
+let lstimeend = null;
+let lsstall = null;
+let lsstcor = null;
+let lssterr = null;
+let lsstquest = null;
+let lschweak = new Array();
+
 function make_help(s, code) {
     const spans = document.createElement("span");
     spans.classList.add("ch");
@@ -33,16 +47,7 @@ function show_help(str = "") {  // XXX
     while (divhelp.firstChild) { divhelp.removeChild(divhelp.firstChild); }
     //
     const codec = current_codec;
-    /*
-    let code = codec.encode(str.hiragana().hankaku()); // XXX
-    let m;
-    while ((m = codec.pattern.exec(code)) !== null) {
-        if (m[1] !== "") { divhelp.appendChild(make_help(m[1], m[1])); }
-        divhelp.appendChild(make_help(codec.hash[m[2]], m[2]));
-        code = m[3];
-    }
-    */
-    for (let a of codec.encode2sub(str)) {
+    for (const a of codec.encode2sub(str)) {
         divhelp.appendChild(make_help(a[0], a[1]));
     }
     //
@@ -55,7 +60,7 @@ function show_help(str = "") {  // XXX
 function show_typo(a) {
     while (divhelp.firstChild) { divhelp.removeChild(divhelp.firstChild); }
     //
-    for (let elm of a) {
+    for (const elm of a) {
         divhelp.appendChild(make_help(elm[0], elm[1]));
     }
     //
@@ -66,82 +71,56 @@ function show_typo(a) {
 }
 
 function do_input_text(str, s) {
+    lstimeend = (new Date()).getTime();
+    lstime += lstimeend - lstimebeg;
+    //
     const codec = current_codec;
-    /*
-    let code = codec.encode(str.hiragana().hankaku()); // XXX
-    const r = new Array();
-    let m;
-    while ((m = codec.pattern.exec(code)) !== null) {
-        let ch, st;
-        if (m[1] !== "") { ch = m[1]; st = m[1]; }
-        ch = codec.hash[m[2]]; st = m[2];
-        code = m[3];
-        r.push([ch, st]);
-    }
-    */
     const r = codec.encode2sub(str);
     //
-    return lcs.match(r, s);
+    const m = lcs.match(r, s);
+    lsstall += m.stall;
+    lsstcor += m.stcor;
+    lssterr += m.sterr;
+    lsstquest += m.stquest;
+    //
+    return m;
 }
 
 function do_result(res) {
-    // let s = "";
-    // let t = "";
-    const span = document.createElement("span");
-    span.classList.add("usr");
-    // const acorr = new Array();
+    const e = new Array();
+    const acorr = new Array();
     const aerr = new Array();
     const atypo = new Array();
     for (let i = 0; i < res.length; i++) {
         const a = res[i];
         if (a[0]) {
+            e.push([a[1]]);
             // correct
-            // s += a[1];
-            const s = document.createElement("span");
-            s.textContent = a[1];
-            span.appendChild(s);
-            // acorr.push(a[1]);
+            acorr.push(a[1]);
         } else {
             // typo
-            // s += a[2];
-            const s = document.createElement("span");
-            s.classList.add("err");
-            s.textContent = a[2];
-            span.appendChild(s);
+            e.push([a[2], "err"]);
             for (let j = 0; j < a[1].length; j++) {
-                // t += a[1][j][0];
-                // atypo.push([a[1][j][0], a[1][j][1]]);
                 atypo.push(a[1][j]);
-                // atypo.push(a[1][j][1]);
                 aerr.push(a[1][j][0]);
             }
         }
     }
     //
-    for (let typo of atypo) { lesson_typo.push(typo); }
-    // divout.textContent += s;
-    // show_help(t);
+    lschweak = lschweak.filter((ch) => !acorr.includes(ch));
+    aerr.map((ch) => {
+        if (!lschweak.includes(ch)) { lschweak.push(ch); }
+    });
+    //
+    for (const typo of atypo) { lesson_typo.push(typo); }
     show_typo(atypo);
     //
-    // return s;
-    // divout.appendChild(span);
-    pute(span);
-    // console.log(span);
-    // console.log(span.innerHTML);
-    // divout.innerHTML += span.innerHTML;
-    // return span;
+    pute(make_span(e, ["usr"]));
+    //
     if (0 < aerr.length) {
-        const serr = aerr.map((ch) => {
-            const s = document.createElement("span");
-            s.classList.add("err");
-            s.textContent = ch;
-            return s;
-        });
-        const message = document.createElement("span");
-        // message.textContent = "Typo ";
-        message.textContent = "まちがえた文字 ";
-        for (let s of serr) { message.appendChild(s); }
-        pute(message, ["message"]);
+        const e = aerr.map((ch) => [ch, "err"]);
+        e.unshift(["[まちがえた文字] "]);
+        pute(make_span(e), ["message"]);
     }
 }
 
@@ -154,7 +133,7 @@ function truncate() {
 function pute(elm, klass = []) {
     const div = document.createElement("div");
     //
-    div.classList.add(...klass);
+    if (0 < klass.length) { div.classList.add(...klass); }
     //
     div.appendChild(elm);
     //
@@ -173,7 +152,7 @@ function puts(str = "", klass = []) {
     //
     div.textContent += nbsp;
     //
-    div.classList.add(...klass);
+    if (0 < klass.length) { div.classList.add(...klass); }
     //
     divout.appendChild(div);
     //
@@ -190,6 +169,60 @@ function clear() {
     for (let i = 0; i < divout_size; i++) { puts(); }
     //
     truncate();
+}
+
+function do_reset() {
+    time = 0;
+    stall = 0;
+    stcor = 0;
+    sterr = 0;
+    stquest = 0;
+    //
+    lesson_typo.length = 0;
+    //
+    lschweak.length = 0;
+}
+
+function do_lsreset() {
+    lstime = 0;
+    lsstall = 0;
+    lsstcor = 0;
+    lssterr = 0;
+    lsstquest = 0;
+    //
+    lesson_typo.length = 0;
+}
+
+function make_span(a, klass = []) {
+    const span = document.createElement("span");
+    for (const e of a) {
+        const str = e.shift();
+        const s = document.createElement("span");
+        s.textContent = str;
+        if (0 < e.length) { s.classList.add(...e); }
+        span.appendChild(s);
+    }
+    if (0 < klass.length) { span.classList.add(...klass); }
+    return span;
+}
+
+function do_score(ms, nraw, stcor, sterr, stquest) {
+    pute(make_span([["[総打鍵成績] 毎打鍵 "],
+                    [Math.floor(ms / nraw), "usr"],
+                    [" ミリ秒、毎分 "],
+                    [Math.floor(nraw / ms * 60000), "usr"],
+                    [" 打鍵"]]),
+         ["message"]);
+    pute(make_span([["[実打鍵成績] 毎打鍵 "],
+                    [Math.floor(ms / stcor), "usr"],
+                    [" ミリ秒、毎分 "],
+                    [Math.floor(stcor / ms * 60000), "usr"],
+                    [" 打鍵"]]),
+         ["message"]);
+    pute(make_span([["エラーレート "],
+                    [Math.floor(sterr / stquest * 1000) / 10, "err"],
+                    [" %"]]),
+         ["message"]);
 }
 
 window.addEventListener("load", (event) => {
@@ -255,12 +288,14 @@ window.addEventListener("load", (event) => {
         putm(`${ls.name}. ${ls.text[0]}`);
         putm();
         // putm("Hit Return to start lesson");
-        putm("Return キーで開始");
+        putm("リターンキーで開始");
         //
         textin.focus();
+        //
+        do_lsreset();
     });
     //
-    for (let cd of codec) {
+    for (const cd of codec) {
         const option = document.createElement("option");
         option.value = cd.id;
         option.text = cd.title;
@@ -269,7 +304,7 @@ window.addEventListener("load", (event) => {
     }
     selectcodec.dispatchEvent(new Event("change"));
     //
-    for (let bk of book) {
+    for (const bk of book) {
         const option = document.createElement("option");
         option.value = bk.id;
         option.text = bk.title;
@@ -278,9 +313,10 @@ window.addEventListener("load", (event) => {
     }
     selectbook.dispatchEvent(new Event("change"));
     //
-    for (let ls of current_book.lesson) {
+    let i = 0;
+    for (const ls of current_book.lesson) {
         const option = document.createElement("option");
-        option.value = ls.id;
+        option.value = i; i += 1;
         option.text = `${ls.name}. ${ls.text[0]}`;
         selectlesson.appendChild(option);
     }
@@ -306,41 +342,49 @@ window.addEventListener("load", (event) => {
             if (current_text_index === null) {
                 current_text_index = 0;
                 //
-                lesson_typo.length = 0;
+                // lesson_typo.length = 0;
+                // do_reset();
             } else if (current_text_index < current_lesson.text.length - 1) {
                 current_text_index += 1;
             } else {
+                time += lstime;
+                stall += lsstall;
+                stcor += lsstcor;
+                sterr += lssterr;
+                stquest += lsstquest;
+                do_score(lstime, lsstall, lsstcor, lssterr, lsstquest);
+                //
                 current_text_index = null;
-                // puts();
                 //
                 if (0 < lesson_typo.length) {
                     // - 【JavaScript】配列の重複を取り除く
                     // - https://zenn.dev/nori_maki/articles/e5ed288991017d
-                    // const typo = lesson_typo.filter((element, index, self) => self.findIndex((e) => e[0] === element[0]) === index); // unique by typo char
                     const typo = lesson_typo.filter((element, index, self) => self.findIndex((e) => e[0] === element[0] && e[1] === element[1]) === index); // unique by typo char and strokes
                     show_typo(typo);
                     //
-                    const serr = typo.map((t) => {
-                        const s = document.createElement("span");
-                        s.classList.add("err");
-                        s.textContent = t[0];
-                        return s;
-                    });
-                    const message = document.createElement("span");
-                    // message.textContent = "Lesson typo ";
-                    message.textContent = "この課でまちがえた文字 ";
-                    for (let s of serr) { message.appendChild(s); }
-                    pute(message, ["message"]);
+                    const e = typo.map((t) => [t[0], "err"]);
+                    e.unshift(["[この課でまちがえた文字] "]);
+                    pute(make_span(e), ["message"]);
                 }
                 //
+                puts();
                 // putm("Next/Again/Previous/Quit");
-                putm("続けますか? - 次へ(N)/もう一度(A)/前へ(P)/終了(Q)");
+                putm("続けますか? 次へ(N)/もう一度(A)/前へ(P)/終了(Q)");
                 isprompt = true;
             }
             //
             if (current_text_index !== null) {
                 current_text = current_lesson.text[current_text_index];
-                puts(current_text);
+                if (lschweak.length === 0) {
+                    puts(current_text);
+                } else {
+                    const re = new RegExp("(" + lschweak.map((ch) => RegExp.escape(ch)).join("|") + ")");
+                    // > もし separator が括弧 ( ) を含む正規表現であれば、一致した結果が配列に含められます。
+                    const a = current_text.split(re).map((s) => re.test(s) ? [s, "weak"] : [s]);
+                    pute(make_span(a));
+                }
+                //
+                lstimebeg = (new Date()).getTime();
             } else {
                 current_text = null;
             }
@@ -357,11 +401,28 @@ window.addEventListener("load", (event) => {
                 isprompt = false;
             } else if (key === "q") {
                 // isprompt = false;
+                //
+                puts();
+                putm();
+                putm("総合成績");
+                putm();
+                //
+                do_score(time, stall, stcor, sterr, stquest);
+                //
+                pute(make_span([["入力打鍵数 "],
+                                [stall, "usr"],
+                                [" 打鍵、所要時間 "],
+                                [Math.ceil(time / 1000), "usr"],
+                                [" 秒"]]),
+                    ["message"]);
+                //
+                puts();
                 // putm("Bye");
                 putm("おつかれさまでした");
                 textin.blur();
                 //
-                lesson_typo.length = 0;
+                // lesson_typo.length = 0;
+                do_reset();
             }
             textin.value = "";
             if (!isprompt) {
@@ -371,4 +432,6 @@ window.addEventListener("load", (event) => {
         }
     });
     // textin.focus();
+    //
+    do_reset();
 });
