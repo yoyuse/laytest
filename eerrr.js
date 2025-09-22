@@ -1,5 +1,8 @@
 const nbsp = "\u00a0";
-const divout_size = 10;
+const stdout_size = 10;
+let stdin = null;
+let stdout = null;
+let stdhelp = null;
 
 let codec = null;
 let book = null;
@@ -47,26 +50,26 @@ function make_help(ch, st) {
 
 function show_help(str = "") {
     // clear help
-    while (divhelp.firstChild) { divhelp.removeChild(divhelp.firstChild); }
+    while (stdhelp.firstChild) { stdhelp.removeChild(stdhelp.firstChild); }
     //
     for (const a of codec.encode2sub(str)) {
-        divhelp.appendChild(make_help(a[0], a[1]));
+        stdhelp.appendChild(make_help(a[0], a[1]));
     }
     //
     // empty help
-    if (!divhelp.firstChild) { divhelp.appendChild(make_help(nbsp, nbsp)); }
+    if (!stdhelp.firstChild) { stdhelp.appendChild(make_help(nbsp, nbsp)); }
 }
 
 function show_typo(a) {
     // clear help
-    while (divhelp.firstChild) { divhelp.removeChild(divhelp.firstChild); }
+    while (stdhelp.firstChild) { stdhelp.removeChild(stdhelp.firstChild); }
     //
     for (const elm of a) {
-        divhelp.appendChild(make_help(elm[0], elm[1]));
+        stdhelp.appendChild(make_help(elm[0], elm[1]));
     }
     //
     // empty help
-    if (!divhelp.firstChild) { divhelp.appendChild(make_help(nbsp, nbsp)); }
+    if (!stdhelp.firstChild) { stdhelp.appendChild(make_help(nbsp, nbsp)); }
 }
 
 function do_input_text(str, s) {
@@ -122,8 +125,8 @@ function do_result(res) {
 }
 
 function truncate() {
-    while (divout_size < divout.childElementCount) {
-        divout.removeChild(divout.firstChild);
+    while (stdout_size < stdout.childElementCount) {
+        stdout.removeChild(stdout.firstChild);
     }
 }
 
@@ -136,7 +139,7 @@ function pute(elm, classList = []) {
     span.textContent = nbsp;
     div.appendChild(span);
     //
-    divout.appendChild(div);
+    stdout.appendChild(div);
     truncate();
 }
 
@@ -147,7 +150,7 @@ function puts(str = "", classList = []) {
     //
     if (0 < classList.length) { div.classList.add(...classList); }
     //
-    divout.appendChild(div);
+    stdout.appendChild(div);
     truncate();
 }
 
@@ -156,8 +159,8 @@ function putm(str = "") {
 }
 
 function clear() {
-    while (divout.firstChild) { divout.removeChild(divout.firstChild); }
-    for (let i = 0; i < divout_size; i++) { puts(); }
+    while (stdout.firstChild) { stdout.removeChild(stdout.firstChild); }
+    for (let i = 0; i < stdout_size; i++) { puts(); }
     truncate();
 }
 
@@ -203,9 +206,9 @@ window.addEventListener("load", (event) => {
     const selectcodec = document.getElementById("selectcodec");
     const selectbook = document.getElementById("selectbook");
     const selectlesson = document.getElementById("selectlesson");
-    const textout = document.getElementById("textout");
-    const textin = document.getElementById("textin");
-    const divhelp = document.getElementById("divhelp");
+    stdout = document.getElementById("stdout");
+    stdin = document.getElementById("stdin");
+    stdhelp = document.getElementById("stdhelp");
     //
     cookie.read();
     //
@@ -259,7 +262,7 @@ window.addEventListener("load", (event) => {
         putm();
         putm("リターンキーで開始");
         //
-        textin.focus();
+        stdin.focus();
         do_lsreset();
     });
     //
@@ -295,8 +298,8 @@ window.addEventListener("load", (event) => {
     //
     selectlesson.dispatchEvent(new Event("change"));
     //
-    textin.addEventListener("keyup", (event) => {
-        const input = textin.value;
+    stdin.addEventListener("keyup", (event) => {
+        const input = stdin.value;
         if (event.key === "Enter") {
             if (text === null) {
                 clear();
@@ -305,7 +308,7 @@ window.addEventListener("load", (event) => {
                 do_result(do_input_text(text, input).res);
                 puts();
             }
-            textin.value = "";
+            stdin.value = "";
             if (text_index === null) {
                 text_index = 0;
             } else if (text_index < lesson.text.length - 1) {
@@ -382,7 +385,7 @@ window.addEventListener("load", (event) => {
                     ["message"]);
                 puts();
                 putm("おつかれさまでした");
-                textin.blur();
+                stdin.blur();
                 //
                 do_reset();
                 show_help();
@@ -390,7 +393,7 @@ window.addEventListener("load", (event) => {
             default:
                 break;
             }
-            textin.value = "";
+            stdin.value = "";
             if (!prompting) {
                 selectlesson.selectedIndex = lesson_index;
                 selectlesson.dispatchEvent(new Event("change"));

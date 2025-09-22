@@ -7,7 +7,7 @@
 
     <style>
      body { font-size: 0.8rem; }
-     #divcontainer {
+     #container {
        margin-left: auto;
        margin-right: auto;
        max-width: 800px;
@@ -66,11 +66,11 @@
        width: 100%;
        /* word-break: break-all; */
      }
-     #textin {
+     #stdin {
        caret-color: FieldText;
        color: Field;
      }
-     #textin::placeholder { color: #757575; }
+     #stdin::placeholder { color: #757575; }
      /*  */
      span.help {
        padding: 0 4px;
@@ -123,7 +123,7 @@
 
   </head>
   <body>
-    <div id="divcontainer">
+    <div id="container">
       <header>
         <nav>
           <div class="icon icon-back" onclick="history.back();"></div>
@@ -143,11 +143,11 @@
       <label for="selectlesson">レッスン</label>
       <select id="selectlesson" name="selectlesson"></select>
       <br>
-      <div id="divout" class="stdio">&nbsp;</div>
+      <div id="stdout" class="stdio">&nbsp;</div>
       <br>
-      <input name="textin" type="text" value="" id="textin" class="stdio" lang="en" spellcheck="false" autocomplete="off" placeholder="ここに入力">
+      <input name="stdin" type="text" value="" id="stdin" class="stdio" lang="en" spellcheck="false" autocomplete="off" placeholder="ここに入力">
       <br>
-      <div id="divhelp" class="stdio">&nbsp;</div>
+      <div id="stdhelp" class="stdio">&nbsp;</div>
     </div>
   </body>
 </html>

@@ -1,6 +1,15 @@
 let jisx4063_count = null;
 let clearedtext = "";
 
+let textsrc = null;
+let spancounter = null;
+let buttonclear = null;
+let buttontest = null;
+let spanenc = null;
+let textenc = null;
+let divdesc = null;
+let imgfig = null;
+
 function laytest(codec, text) {
     const str = text.str;
     const encoded = codec.encode(str.hiragana()).replace(/[^ -~\n]/g, '〓');
@@ -142,16 +151,15 @@ window.addEventListener("load", (event) => {
     option.text = "ユーザー入力";
     selecttext.appendChild(option);
     //
-    const textsrc = document.getElementById("textsrc");
-    const spancounter = document.getElementById("spancounter");
+    textsrc = document.getElementById("textsrc");
+    spancounter = document.getElementById("spancounter");
     const divtable = document.getElementById("divtable");
-    const buttonclear = document.getElementById("buttonclear");
-    const buttontest = document.getElementById("buttontest");
-    const spanenc = document.getElementById("spanenc");
-    const textenc = document.getElementById("textenc");
-    const divfig = document.getElementById("divfig");
-    const divdesc = document.getElementById('divdesc');
-    const imgfig = document.getElementById('imgfig');
+    buttonclear = document.getElementById("buttonclear");
+    buttontest = document.getElementById("buttontest");
+    spanenc = document.getElementById("spanenc");
+    textenc = document.getElementById("textenc");
+    divdesc = document.getElementById('divdesc');
+    imgfig = document.getElementById('imgfig');
     //
     buttontest.addEventListener("click", (event) => {
         // - [JavaScript]複数の子要素を削除する。 #dom - Qiita
