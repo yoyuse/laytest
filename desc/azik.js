@@ -7,4 +7,4 @@ descs["azik"] = new Desc(
 <p>
 USキーボード用に長音 (ー) を apostrophe (&apos;) にも割り当てている
 </p>`,
-  "kb-hhkb.svg");
+  "img/kb-hhkb.svg");

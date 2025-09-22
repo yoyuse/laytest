@@ -118,14 +118,14 @@ function showdesc(id) {
     divdesc.innerHTML = desc.html;
     imgfig.alt = title;
     imgfig.title = title;
-    imgfig.src = 'desc/' + desc.fig;
+    imgfig.src = desc.fig;
 }
 
 function hidedesc() {
     divdesc.innerHTML = "";
     imgfig.alt = "QWERTY";
     imgfig.title = "QWERTY";
-    imgfig.src = 'desc/' + 'kb-hhkb.svg';
+    imgfig.src = 'img/kb-hhkb.svg';
 }
 
 function countchars() {

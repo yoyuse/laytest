@@ -9,4 +9,4 @@ descs["rgts"] = new Desc(
 <li>単打と (半) 母音の区切りに space でなく semicolon (;) を使う</li>
 <li>単打に続く &ldquo;q&rdquo; は『い』『う』などになる</li>
 </ul>`,
-    "kb-rgts-hhkb.svg");
+    "img/kb-rgts-hhkb.svg");

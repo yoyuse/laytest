@@ -8,4 +8,4 @@ descs["ustsuki"] = new Desc(
 <li>かぎ括弧 (「」) を bracket ([]) の位置に合わせた</li>
 <li>中黒 (・) を閉じ bracket の位置に置いた</li>
 </ul>`,
-    "kb-tsuki-2-263-us-hhkb.svg");
+    "img/kb-tsuki-2-263-us-hhkb.svg");

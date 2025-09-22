@@ -8,4 +8,4 @@ descs["ushana"] = new Desc(
 <li>かぎ括弧 (「」) を bracket ([]) の位置に合わせた</li>
 <li>『え』を閉じ bracket の位置に置いた</li>
 </ul>`,
-    "kb-ushana-hhkb.svg");
+    "img/kb-ushana-hhkb.svg");

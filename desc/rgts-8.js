@@ -7,4 +7,4 @@ descs["rgts-8"] = new Desc(
 <p>
 最上段に単打 (半) 母音を割り当て (他の単打の直後でのみ使用できる)
 </p>`,
-    "kb-rgts-8-hhkb.svg");
+    "img/kb-rgts-8-hhkb.svg");

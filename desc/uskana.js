@@ -9,4 +9,4 @@ descs["uskana"] = new Desc(
 <li>長音 (ー) は 『Shift+ほ』で入力</li>
 <li>『む』『ろ』の位置が異なる</li>
 </ul>`,
-    "kb-uskana-hhkb.svg");
+    "img/kb-uskana-hhkb.svg");
