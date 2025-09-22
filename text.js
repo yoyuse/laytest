@@ -6,4 +6,4 @@ function Text(id, title, str) {
     return this;
 }
 
-const text = new Array();
+const texts = new Array();

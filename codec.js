@@ -120,7 +120,7 @@ Codec.prototype.encode = function(str) {
 
 Codec.prototype.encode2sub = function(str) {
     let s = str;
-    let ret = new Array();
+    const ret = new Array();
     // XXX: ローマ字で連続する っ をうまく処理できないと思う
     while (s) {
         for (pat of this.pattern2) {
@@ -147,4 +147,4 @@ Codec.prototype.decode = function(str) {
     return str.replace(/ /g, '　'); // XXX
 }
 
-const codec = new Array();
+const codecs = new Array();

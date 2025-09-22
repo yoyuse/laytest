@@ -1,7 +1,7 @@
 // Jacql
 // - MS-IME ローマ字仮名変換表 - 作成支援ツール
 // - http://jgrammar.life.coocan.jp/ja/tools/imekeys.htm#Jacql
-codec.push(
+codecs.push(
     new Codec("jacql", "Jacql", [
         ["a", "あ"],
         ["i", "い"],

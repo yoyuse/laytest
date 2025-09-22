@@ -37,7 +37,7 @@ Cookie.prototype.get = function(key) {
 
 Cookie.prototype.write = function() {
     let s = '';
-    for (let p in this.content) {
+    for (const p in this.content) {
         s += p + '=' + this.content[p] + ':';
     }
     s = this.name + '=' + encodeURIComponent(s) + ';';
@@ -56,7 +56,7 @@ Cookie.prototype.remove = function() {
 
 Cookie.prototype.showcontent = function() {
     let s = '';
-    for (let p in this.content) {
+    for (const p in this.content) {
         s += p + '=' + this.content[p] + ':';
     }
     return s;

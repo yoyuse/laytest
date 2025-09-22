@@ -1,4 +1,4 @@
-desc["uskana"] = new Desc(
+descs["uskana"] = new Desc(
     "uskana", "USかな",
     `<h2>USかな</h2>
 <p>

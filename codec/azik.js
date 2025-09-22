@@ -1,7 +1,7 @@
 // AZIK
 // - AZIK総合解説書
 // - http://www1.vecceed.ne.jp/~bemu/azik/azikinfo.htm
-codec.push(
+codecs.push(
     new Codec("azik", "AZIK", [
         ["a", "あ"],
         ["i", "い"],

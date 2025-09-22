@@ -1,6 +1,7 @@
+let jisx4063_count = null;
+let clearedtext = "";
+
 function laytest(codec, text) {
-    const codec_id = codec.id;
-    const codec_title = codec.title;
     const str = text.str;
     const encoded = codec.encode(str.hiragana()).replace(/[^ -~\n]/g, '〓');
     const decoded = codec.decode(encoded);
@@ -14,8 +15,8 @@ function laytest(codec, text) {
     const reduced = 100 * (1 - total_count / jisx4063_count);
     const codec_check = decoded === str ? 'OK' : 'NG';
     return {
-        codec_id: codec_id,
-        codec_title: codec_title,
+        codec_id: codec.id,
+        codec_title: codec.title,
         encoded: encoded,
         encode_count: encode_count,
         shifts_count: shifts_count,
@@ -25,8 +26,6 @@ function laytest(codec, text) {
         codec_check: codec_check
     };
 }
-
-let jisx4063_count = null;
 
 const cell_data = [
     ['方式', 'codec_title'],
@@ -38,7 +37,7 @@ const cell_data = [
     ['検証', 'codec_check'],
 ];
 
-function make_table(text, parent = document.body) {
+function make_table(text) {
     jisx4063_count = null;
     const table = document.createElement('table');
     const caption = document.createElement('caption');
@@ -64,9 +63,9 @@ function make_table(text, parent = document.body) {
     //
     const laytestData = new Object();
     let laytest_data = null;
-    for (let i = 0; i < codec.length; i++) {
+    for (let i = 0; i < codecs.length; i++) {
         const tr = document.createElement('tr');
-        laytest_data = laytest(codec[i], text);
+        laytest_data = laytest(codecs[i], text);
         //
         const codecId = laytest_data['codec_id'];
         tr.dataset.codecId = codecId;
@@ -97,20 +96,20 @@ function make_table(text, parent = document.body) {
         tbody.appendChild(tr);
     }
     table.appendChild(tbody);
-    parent.appendChild(table);
+    return table;
 }
 
 function showdesc(id) {
-    const d = desc[id];
-    if (!d) {
+    const desc = descs[id];
+    if (!desc) {
         hidedesc();
         return;
     }
-    const title = d.title;
-    divdesc.innerHTML = d.html;
+    const title = desc.title;
+    divdesc.innerHTML = desc.html;
     imgfig.alt = title;
     imgfig.title = title;
-    imgfig.src = 'desc/' + d.fig;
+    imgfig.src = 'desc/' + desc.fig;
 }
 
 function hidedesc() {
@@ -130,14 +129,12 @@ function setbutton() {
         textsrc.value === "" && clearedtext === "";
 }
 
-let clearedtext = '';
-
 window.addEventListener("load", (event) => {
     const selecttext = document.getElementById("selecttext");
-    for (let t of text) {
+    for (const text of texts) {
         const option = document.createElement('option');
-        option.value = t.id;
-        option.text = t.title;
+        option.value = text.id;
+        option.text = text.title;
         selecttext.appendChild(option);
     }
     const option = document.createElement('option');
@@ -157,26 +154,23 @@ window.addEventListener("load", (event) => {
     const imgfig = document.getElementById('imgfig');
     //
     buttontest.addEventListener("click", (event) => {
-        const parent = divtable;
         // - [JavaScript]複数の子要素を削除する。 #dom - Qiita
         // - https://qiita.com/kiwaki/items/5995a38e6577dee12767
-        // parent.innerHTML = '';
-        while (parent.firstChild) {
-            parent.removeChild(parent.firstChild);
+        while (divtable.firstChild) {
+            divtable.removeChild(divtable.firstChild);
         }
         //
         const index = selecttext.selectedIndex;
-        if (index < text.length) {
-            make_table(text[index], parent);
+        if (index < texts.length) {
+            divtable.appendChild(make_table(texts[index]));
         } else {
             const str = textsrc.value;
-            const t = new Text("usertext", "ユーザー入力", str);
-            make_table(t, parent);
+            const text = new Text("usertext", "ユーザー入力", str);
+            divtable.appendChild(make_table(text));
         }
         //
         spanenc.textContent = "";
         textenc.value = "";
-        //
         hidedesc();
     });
     //
@@ -203,14 +197,15 @@ window.addEventListener("load", (event) => {
     // - https://gist.github.com/KacperKozak/9736160
     textsrc.addEventListener("keydown", (event) => {
         if (event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
-            buttontest.click();
+            // buttontest.click();
+            buttontest.dispatchEvent(new Event("click"));
         }
     });
 
     selecttext.addEventListener("change", (event) => {
         const index = selecttext.selectedIndex;
-        if (index < text.length) {
-            textsrc.value = text[index].str;
+        if (index < texts.length) {
+            textsrc.value = texts[index].str;
             textsrc.readOnly = true;
             buttonclear.value = "消去";
         } else {
@@ -223,8 +218,8 @@ window.addEventListener("load", (event) => {
         countchars();
     });
 
-    // XXX: nfg-giovanni
-    for (let option of selecttext.children) {
+    // XXX: default to nfg-giovanni
+    for (const option of selecttext.children) {
         if (option.value === "nfg-giovanni") {
             selecttext.selectedIndex = option.index;
             // - EventTarget: dispatchEvent() メソッド - Web API | MDN
@@ -233,5 +228,8 @@ window.addEventListener("load", (event) => {
         }
     }
     const s = textsrc.value;
-    if (s && s.remove_whites() !== "") { buttontest.click(); }
+    // if (s && s.remove_whites() !== "") { buttontest.click(); }
+    if (s && s.remove_whites() !== "") {
+        buttontest.dispatchEvent(new Event("click"));
+    }
 });

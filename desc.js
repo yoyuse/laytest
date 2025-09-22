@@ -7,4 +7,4 @@ function Desc(id, title, html, fig) {
     return this;
 }
 
-const desc = new Object();
+const descs = new Object();

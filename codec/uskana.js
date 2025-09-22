@@ -1,5 +1,5 @@
 // USかな
-codec.push(
+codecs.push(
     new Codec("uskana", "USかな", [
         ["t[", "が"],
         ["g[", "ぎ"],

@@ -1,5 +1,5 @@
 // めくらぶどうと虹
-text.push(
+texts.push(
     new Text("mekuraniji", "めくらぶどうと虹",
              `めくらぶどうと　にじ
 

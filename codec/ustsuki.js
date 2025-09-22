@@ -1,7 +1,7 @@
 // US月
 // - 「月」 --- 中指シフト新JIS配列
 // - https://jisx6004.client.jp/tsuki.html
-codec.push(
+codecs.push(
     new Codec("ustsuki", "US月", [
         ["kwl", "び"],
         ["kel", "ぼ"],

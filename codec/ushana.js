@@ -1,7 +1,7 @@
 // US花
 // - 花のくに
 // - http://togasi.my.coocan.jp/hana_no_kuni/index.html
-codec.push(
+codecs.push(
     new Codec("ushana", "US花", [
         ["sl", "が"],
         ["fl", "ぎ"],

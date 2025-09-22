@@ -1,5 +1,5 @@
 // Roman
-codec.push(
+codecs.push(
     new Codec("roman", "Roman", [
         ["kya", "きゃ"],
         ["kyu", "きゅ"],

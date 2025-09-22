@@ -1,5 +1,5 @@
 // RGT 私家版-11
-codec.push(
+codecs.push(
     new Codec("rgts", "RGTs", [
         ["kya", "きゃ"],
         ["kyu", "きゅ"],

@@ -1,6 +1,6 @@
 // JIS X 4063
 // XXX: n' の定義がないけど本当に JIS X 4063 か?
-codec.push(
+codecs.push(
     new Codec("jisx4063", "ローマ字", [
         ["a", "あ"],
         ["i", "い"],

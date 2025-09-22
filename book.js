@@ -1,9 +1,9 @@
-function Book(id, title, lesson) {
+function Book(id, title, lessons) {
     this.id = id;
     this.title = title;
-    this.lesson = lesson;
+    this.lessons = lessons;
     //
     return this;
 }
 
-const book = new Array();
+const books = new Array();

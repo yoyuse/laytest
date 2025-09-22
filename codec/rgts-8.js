@@ -1,5 +1,5 @@
 // RGT 私家版-8
-codec.push(
+codecs.push(
     new Codec("rgts-8", "RGTs-8", [
         ["kya", "きゃ"],
         ["kyu", "きゅ"],
