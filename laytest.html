@@ -17,34 +17,30 @@
        border-bottom: 2px solid #424242;
        font-size: 1.0rem;
        margin: 1.33rem 0;
+       position: relative;
      }
      h1 {
-       /* border-bottom: 2px solid #424242; */
        display: inline-block;
        font-family: "Meiryo", "Optima", sans-serif;
        font-size: 2.0rem;
-       margin: 0 1.0rem;
+       margin: 0;
      }
-     nav {
+     /*  */
+     #breadcrumb {
        display: inline-block;
+       position: absolute;
+       right: 0; bottom: 4px;
      }
-     .icon {
-       box-sizing: border-box;
+     #breadcrumb .path-separator { display: none; }
+     #breadcrumb .path-component:not(:last-child)::after {
+       content: "";
        display: inline-block;
-       height: 10px;
-       width: 10px;
-     }
-     .icon-back {
-       border: 2px solid #9E9E9E;
-       border-bottom: transparent;
-       border-right: transparent;
-       transform: translate(2px, -2px) rotate(-45deg);
-     }
-     .icon-forward {
        border: 2px solid #9E9E9E;
        border-bottom: transparent;
        border-left: transparent;
-       transform: translate(-2px, -2px) rotate(45deg);
+       margin: 8px;
+       transform: translate(-2px, 6px) rotate(45deg);
+       width: 5px; height: 5px;
      }
      /*  */
      table {
@@ -91,6 +87,9 @@
        font-family: monospace;
        font-size: 14px;
        width: 100%;
+       /* overflow-wrap: break-word; */
+       /* 禁則処理しない */
+       line-break: anywhere;
        word-break: break-all;
      }
      .right { text-align: right; }
@@ -146,13 +145,10 @@
   <body>
     <div id="container">
       <header>
-        <nav>
-          <div class="icon icon-back" onclick="history.back();"></div>
-        </nav>
         <h1>laytest</h1>
-        <nav>
-          <div class="icon icon-forward" onclick="history.forward();"></div>
-        </nav>
+        <!--  -->
+        <div id="breadcrumb"></div>
+        <script src="breadcrumb.js"></script>
       </header>
 
       <div id="divform">
