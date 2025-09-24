@@ -16,12 +16,19 @@
      header {
        border-bottom: 2px solid #424242;
        margin: 1.33rem 0;
+       position: relative;
      }
      h1 {
        display: inline-block;
        font-family: "Meiryo", "Optima", sans-serif;
        font-size: 2.0rem;
        margin: 0;
+     }
+     /*  */
+     #banner {
+       display: inline-block;
+       position: absolute;
+       right: 0; bottom: 4px;
      }
      /*  */
      dt, .dt { font-weight: bold; }
@@ -44,6 +51,10 @@
     <div id="container">
       <header>
         <h1>less is better</h1>
+        <!--  -->
+        <div id="banner">
+          <a href="https://github.com/yoyuse/laytest">View on GitHub</a>
+        </div>
       </header>
 
       <ul class="dl">
