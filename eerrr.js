@@ -314,6 +314,10 @@ window.addEventListener("load", (event) => {
             if (text === null) {
                 clear();
                 show_help();
+            } else if (text !== "" && input === "") {
+                // XXX: レッスン中に空入力でスキップ (ad hoc)
+                putm("スキップしました");
+                puts();
             } else {
                 do_result(do_input_text(text, input).res);
                 puts();
