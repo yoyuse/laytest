@@ -172,6 +172,7 @@ function do_reset() {
     stquest = 0;
     lschweak.length = 0;
     lschtypo.length = 0;
+    // prompting = false;
 }
 
 function do_lsreset() {
@@ -181,6 +182,7 @@ function do_lsreset() {
     lssterr = 0;
     lsstquest = 0;
     lschtypo.length = 0;
+    prompting = false;
 }
 
 function do_score(ms, nraw, stcor, sterr, stquest) {
