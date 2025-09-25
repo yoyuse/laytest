@@ -300,7 +300,9 @@ window.addEventListener("load", (event) => {
     //
     stdin.addEventListener("keyup", (event) => {
         const input = stdin.value;
-        if (event.key === "Enter") {
+        if (prompting && event.key === "Enter") {
+            stdin.value = "";
+        } else if (event.key === "Enter") {
             if (text === null) {
                 clear();
                 show_help();
