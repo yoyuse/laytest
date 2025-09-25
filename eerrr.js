@@ -300,6 +300,12 @@ window.addEventListener("load", (event) => {
     //
     stdin.addEventListener("keyup", (event) => {
         const input = stdin.value;
+        if (!prompting && input === "" && text_index === null && text === null && event.key === "Backspace") {
+            // XXX: レッスン開始時に空入力に BS で prompting に (ad hoc)
+            puts();
+            putm("続けますか? 次へ(N)/もう一度(A)/前へ(P)/終了(Q)");
+            prompting = true;
+        }
         if (prompting && event.key === "Enter") {
             stdin.value = "";
         } else if (event.key === "Enter") {
