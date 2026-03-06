@@ -3,7 +3,7 @@ descs["rgts"] = new Desc(
     `<h2>RGTs</h2>
 <p>
 <a href="https://qiita.com/dulunoj/items/95ebe5e40031183c5eea">RGT</a> の
-<a href="https://github.com/yoyuse/kkh/blob/4073b37c9f54c99096d2ad1b3446806420d77bd3/extra/rgts.md">私家版</a>-12
+<a href="https://github.com/yoyuse/kkh/blob/4073b37c9f54c99096d2ad1b3446806420d77bd3/extra/rgts.md">私家版</a>
 。オリジナルとの主な違いは以下:
 </p>
 <ul>
